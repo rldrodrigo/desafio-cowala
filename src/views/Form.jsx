@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Form.css';
 
+
 const Form = props => {
 
     const [nome, setNome] = useState(localStorage.getItem('nome') || '')
@@ -38,6 +39,27 @@ const Form = props => {
         setCelular('')
         setIp('')
     }
+
+    const masks = {
+        phone(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '($1) $2')
+                .replace(/(\d{4})(\d)/, '$1-$2')
+                .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+                .replace(/(-\d{4})\d+?$/, '$1')
+        }
+    }
+
+
+    document.querySelectorAll('input').forEach(($input) => {
+
+        const campo = document.getElementById('celular')
+        campo.addEventListener('input', (e) => {
+
+            e.target.value = masks.phone(e.target.value)
+        }, false)
+    })
 
     return (
         <div className="Form" >

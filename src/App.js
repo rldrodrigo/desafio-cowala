@@ -8,9 +8,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Topo></Topo>
-        <a href='/'>Home</a>
-        <a href='/form'>Acessar formulario</a>
-        <a href='/algoritmos'>Algoritmos</a>
         <Content />
 
 
