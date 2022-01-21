@@ -9,6 +9,7 @@ const Form = props => {
     const [celular, setCelular] = useState(localStorage.getItem('celular') || '')
     const [ip, setIp] = useState(localStorage.getItem('ip') || '')
 
+    //Função para pegar o IP do usuário a partir da API
     function getIP(url) {
         var request = new XMLHttpRequest();
         request.open('GET', url);
@@ -21,7 +22,7 @@ const Form = props => {
         }
         request.send();
     }
-
+    //Funções para os botões salvar e limpar
     function salvarDados() {
         localStorage.setItem('nome', nome)
         localStorage.setItem('profissao', profissao)
@@ -39,7 +40,7 @@ const Form = props => {
         setCelular('')
         setIp('')
     }
-
+    //Função para mascarar o telefone
     const masks = {
         phone(value) {
             return value
@@ -53,10 +54,8 @@ const Form = props => {
 
 
     document.querySelectorAll('input').forEach(($input) => {
-
         const campo = document.getElementById('celular')
         campo.addEventListener('input', (e) => {
-
             e.target.value = masks.phone(e.target.value)
         }, false)
     })
