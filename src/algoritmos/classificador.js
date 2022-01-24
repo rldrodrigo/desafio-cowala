@@ -40,4 +40,5 @@ let obj = [
 ]
 
 
+// Para testar a função
 console.log(classificador(obj))

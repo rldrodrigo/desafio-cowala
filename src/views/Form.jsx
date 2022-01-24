@@ -57,6 +57,7 @@ const Form = props => {
         const campo = document.getElementById('celular')
         campo.addEventListener('input', (e) => {
             e.target.value = masks.phone(e.target.value)
+            setCelular(masks.phone(e.target.value))
         }, false)
     })
 

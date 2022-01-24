@@ -7,5 +7,8 @@ function fibonacci(number) {
     }
     return fibonacci;
 }
+
+
+// Para testar a função
 var f = fibonacci(3);
 console.log(f);

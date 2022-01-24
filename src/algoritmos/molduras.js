@@ -17,4 +17,7 @@ function molduras(colunas, linhas) {
         console.log(linha)
     }
 }
+
+
+// Para testar a função
 var f = molduras(1, 3);
