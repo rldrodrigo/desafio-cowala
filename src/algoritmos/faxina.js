@@ -6,6 +6,9 @@ function faxina(obj) {
     }
 }
 
+
+
+// Para testar a função
 let obj = { "fizz": "buzz", "foo": null, "bar": 42 }
 faxina(obj)
 console.log(obj)
